@@ -21,7 +21,7 @@ vi.mock('@strapi/strapi/admin', () => ({
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 
-const baseProps = {
+const baseProps: Parameters<typeof RelationPublishAction>[0] = {
   activeTab: 'draft',
   documentId: 'doc-123',
   model: 'api::article.article',
@@ -30,7 +30,7 @@ const baseProps = {
   meta: {},
 };
 
-const callAction = (props = baseProps) =>
+const callAction = (props: Parameters<typeof RelationPublishAction>[0] = baseProps) =>
   renderHook(() => RelationPublishAction(props));
 
 // ── Tests ──────────────────────────────────────────────────────────────────
@@ -252,7 +252,7 @@ describe('plugin.bootstrap', () => {
     plugin.bootstrap(app);
     const result = addDocumentActionFn([{ type: 'delete' }]);
 
-    expect(result.at(-1)).toBe(RelationPublishAction);
+    expect(result[result.length - 1]).toBe(RelationPublishAction);
   });
 
   it('preserves all existing actions', () => {
