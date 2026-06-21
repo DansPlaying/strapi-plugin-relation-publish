@@ -74,6 +74,8 @@ const RelationPublishAction = ({
 RelationPublishAction.type = 'relation-publish';
 RelationPublishAction.position = ['relation-modal'];
 
+export { RelationPublishAction };
+
 export default {
   register(app: any) {
     app.registerPlugin({

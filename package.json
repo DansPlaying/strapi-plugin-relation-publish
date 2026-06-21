@@ -42,16 +42,22 @@
     "build": "strapi-plugin build --minify",
     "watch": "strapi-plugin watch",
     "watch:link": "strapi-plugin watch:link",
-    "verify": "strapi-plugin verify"
+    "verify": "strapi-plugin verify",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "devDependencies": {
     "@strapi/admin": "^5.0.0",
     "@strapi/sdk-plugin": "^5.3.2",
     "@strapi/strapi": "^5.0.0",
+    "@testing-library/react": "^16.0.0",
     "@types/react": "^18.0.0",
+    "@vitejs/plugin-react": "^4.0.0",
+    "jsdom": "^26.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0",
+    "vitest": "^3.0.0"
   },
   "peerDependencies": {
     "@strapi/admin": "^5.0.0",
